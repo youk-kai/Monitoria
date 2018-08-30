@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\title{Resolução de exercícios}
+
+\date{}
+
+\begin{document}
+
+\maketitle{}
+
+Qualquer dúvida, pergunte! Tirar dúvidas é a função primária do monitor.
+
+\section{Lista 1}
+
+4. A eliminação, seja qual for, se baseia em operações sobre matrizes. Isso significa que apenas troca de posição de linhas, escalamento de linha e soma de uma linha a outra escalada são operações válidas.
+
+Para que uma matriz esteja em \textbf{forma escalonada} (escada), é necessário que cada linha possua mais zeros iniciais do que a anterior. Na \textbf{forma escalonada reduzida}, ainda se exige que cada pivot (a primeira entrada não nula de uma linha i.e. o primeiro número não nulo que se segue aos zeros iniciais) seja o único elemento não nulo de sua coluna. \vspace{2mm}
+\par d) A matriz abaixo não está na forma escalonada porque o segundo ($a_{21}$) encontra-se na \textit{mesma} coluna que o primeiro ($a_{11}$).
+
+\[ \begin{bmatrix} 
+1 & 5 & 2 \\ 
+2 & 0 & 1 \\ 
+\end{bmatrix} \]
+
+Na forma escalonada, temos
+
+\[ \begin{bmatrix} 
+1 & 5 & 2 \\ 
+0 & 10 & 3 \\ 
+\end{bmatrix} \]
+
+Observe que nossa definição anterior não foi suficientemente forte para garantir que só exista uma forma escalonada da matriz, então poderemos obter várias respostas (convença-se que, na verdade, temos infinitas respostas). Essa observação também se aplica à forma escalonada reduzida, que será
+
+\[ \begin{bmatrix} 
+-2 & 0 & -1 \\ 
+0 & 10 & 3 \\ 
+\end{bmatrix} \] \vspace{2mm} \\  
+8. Para que valores do parâmetro \textit{a} o sistema abaixo admite solução?
+
+\[ \begin{cases} 6x + y = 7 \\ 3x + y = 4 \\ -6x - 2y = a
+\end{cases}
+\]
+
+Primeiro, precisamos converter o sistema ao formato de matrizes:
+
+\[ \begin{bmatrix} 6 & 1 \\ 3 & 1 \\ -6 & -2 
+\end{bmatrix}
+\begin{pmatrix} x \\ y \end{pmatrix} =
+\begin{pmatrix} 7 \\ 4 \\ a \end{pmatrix}
+\]
+
+Executando a Eliminação de Gauss na matriz de coeficientes aumentada
+
+\[ \begin{bmatrix}[cc|c]
+6 & 1 & 7\\ 
+3 & 1 & 4 \\
+-6 & -2 & a
+\end{bmatrix} \]
+
+Obtemos
+
+\[\begin{bmatrix}[cc|c]
+6 & 1 & 7\\ 
+0 & -1 & -1 \\
+0 & 0 & 8 + a
+\end{bmatrix} \]
+
+O que implica $0x + 0y = 8 + a \Longleftrightarrow{} a = -8$. 
+\vspace{5mm}
+\\ 
+10. O posto de uma matriz é o seu número de linhas não nulas após o escalonamento. Suponha uma matriz $A_{mxn}$ em forma escada. Temos que o sistema descrito por A é \vspace{2mm}
+
+\par i. \textbf{Possível} quando posto(A) = posto(A$\mid$b).
+\par \hspace{4mm} a) \textbf{Determinado} (uma solução) quando (n - posto(A)) $\geq$ 0. Convença-se que isso é equivalente a N(eq) $\geq$ N(vv)
+\par \hspace{4mm} b) \textbf{Indeterminado} (infinitas soluções) quando (n - posto(A)) $<$ 0. Convença-se que isso é equivalente a N(eq) $<$ N(vv) \vspace{1mm}
+
+\par ii. \textbf{Impossível} quando posto(A) $\neq$ posto(A$\mid$b). \vspace{4mm}
+
+\par b) A forma escada da matriz aumentada é
+
+\[ \begin{bmatrix}[ccc|c]
+1 & 4 & 3 & $b_1$ \\
+0 & -7 & -6 & $b_2$
+\end{bmatrix} \]
+
+É evidente que posto(A) = posto(A$\mid$b) independentemente do valor de $b_i$. Mais ainda, o número de colunas é maior que o posto i.e. o sistema é indeterminado ou, equivalentemente, admite infinitas soluções. 
+
+\end{document}
